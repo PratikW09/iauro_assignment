@@ -1,7 +1,6 @@
 import User from '../models/user.models.js';
 import bcrypt from 'bcryptjs';
-import generateToken from '../utils/generateToken.js';
-import { hashPassword } from '../utils/token.utils.js';
+import { hashPassword,generateToken } from '../utils/token.utils.js';
 
 const registerUser = async (data) => {
   const { name, email, password } = data;

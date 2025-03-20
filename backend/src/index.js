@@ -2,7 +2,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import connectDB from './config/db.config';
+import connectDB from './config/db.config.js';
 import authRoutes from './routes/auth.routes.js';
 
 dotenv.config();
@@ -17,7 +17,7 @@ app.use(express.json());
 
 
 // Connect to MongoDB
-connectDB;
+connectDB();
 
 app.use('/api/auth', authRoutes);
 

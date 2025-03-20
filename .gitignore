@@ -46,7 +46,7 @@ coverage/
 *.log
 
 # Git ignores package-lock & yarn.lock if you're using only one package manager
-package-lock.json
+
 yarn.lock
 pnpm-lock.yaml
 
