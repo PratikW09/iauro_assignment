@@ -27,21 +27,16 @@ This project is a **Full Stack Expense Tracker** that allows users to:
 - `bcryptjs` — Password Hashing.
 - `CORS` — Cross-Origin Resource Sharing.
 
----
-
-## 📂 **Folder Structure**
-
-📁 iauro-assignment ├── 📁 backend │ ├── 📁 config │ │ └── 📄 db.js │ ├── 📁 controllers │ │ ├── 📄 authController.js │ │ └── 📄 expenseController.js │ ├── 📁 middleware │ │ └── 📄 authMiddleware.js │ ├── 📁 models │ │ ├── 📄 User.js │ │ └── 📄 Expense.js │ ├── 📁 routes │ │ ├── 📄 authRoutes.js │ │ └── 📄 expenseRoutes.js │ ├── 📁 services │ │ ├── 📄 authService.js │ │ └── 📄 expenseService.js │ ├── 📁 utils │ │ └── 📄 generateToken.js │ └── 📄 server.js ├── 📁 client │ ├── 📁 public │ ├── 📁 src │ │ ├── 📁 assets │ │ ├── 📁 components │ │ │ ├── 📄 Navbar.jsx │ │ │ ├── 📄 ExpenseTable.jsx │ │ │ ├── 📄 ExpenseChart.jsx │ │ │ └── 📄 PrivateRoute.jsx │ │ ├── 📁 pages │ │ │ ├── 📄 Login.jsx │ │ │ ├── 📄 Signup.jsx │ │ │ ├── 📄 Dashboard.jsx │ │ │ └── 📄 Expenses.jsx │ │ ├── 📁 services │ │ │ └── 📄 api.js │ │ ├── 📄 App.jsx │ │ ├── 📄 index.css │ │ └── 📄 main.jsx │ ├── 📄 package.json │ └── 📄 tailwind.config.cjs ├── 📄 .env └── 📄 README.md
 
 ---
 
 ## 🔐 **Admin Credentials for Testing**
 
-Admin Credentials:
+## 🔐 **Admin Credentials for Testing**
 
-Name: John Doe
-Email: john@example.com
-Password: 123456
+**Name:** John Doe  
+**Email:** john@example.com  
+**Password:** 123456 
 
 ---
 
@@ -59,15 +54,15 @@ Password: 123456
 ## 📦 **Backend Setup**
 ### **1️⃣ Clone the Repository**
 ```bash
-git clone https://github.com/pratikwalale/finance-tracker.git
-cd finance-tracker/backend
+git clone https://github.com/PratikW09/iauro_assignment.git
+cd iauro_assignment/backend
 2️⃣ Install Dependencies
 
 npm install
 3️⃣ Create .env File
 
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/finance_tracker
+MONGO_URI=your uri
 JWT_SECRET=your_jwt_secret
 4️⃣ Start the Backend Server
 
@@ -76,26 +71,18 @@ npm run dev
 
 🎨 Frontend Setup
 1️⃣ Move to Client Directory
-bash
-Copy
-Edit
+
 cd ../client
 2️⃣ Install Dependencies
-bash
-Copy
-Edit
+
 npm install
 3️⃣ Start Frontend Server
-bash
-Copy
-Edit
+
 npm run dev
 ✅ React App runs at http://localhost:5173
 
 🔑 Admin Credentials for Testing
-makefile
-Copy
-Edit
+
 Email: john@example.com
 Password: 123456
 ✅ Use this admin to test the platform!
@@ -112,48 +99,7 @@ GET	/api/expenses/my-expenses	Get user expenses	Private
 GET	/api/expenses/:id	Get single expense	Private
 PUT	/api/expenses/:id	Update expense	Private
 DELETE	/api/expenses/:id	Delete expense	Private
-📊 Expense Dashboard Preview
-jsx
-Copy
-Edit
-<PieChart width={400} height={300}>
-  <Pie data={data} cx={200} cy={150} outerRadius={120} fill="#8884d8" dataKey="value">
-    {data.map((entry, index) => (
-      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-    ))}
-  </Pie>
-  <Tooltip />
-  <Legend />
-</PieChart>
-✅ Category-wise expense visualization with Pie Chart.
 
-🛠️ Troubleshooting
-❌ MongoDB Connection Error
-🔹 Check if MongoDB is running
-
-bash
-Copy
-Edit
-mongod --dbpath=/data/db
-🔹 Ensure .env has correct MONGO_URI
-
-❌ CORS Error
-🔹 Enable CORS in server.js
-
-javascript
-Copy
-Edit
-app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true,
-}));
-❌ Vite Pre-transform Error
-🔹 Ensure correct import in React:
-
-javascript
-Copy
-Edit
-import axios from '../services/api';
 🤝 Contributing
 Want to improve this project?
 
@@ -164,21 +110,5 @@ Submit a pull request
 🎉 Project is Live
 🔗 GitHub Repo
 📌 Demo Video: Coming Soon 🎥
-
-✅ Bhai, ab interviewer bhi impress ho jayega! 🚀🔥
-Agar kuch aur changes chahiye ho toh bata dena! 😎
-
-yaml
-Copy
-Edit
-
----
-
-## 🎯 **Why This README is Perfect?**
-✅ **Easy for Interviewer** – Covers everything **clearly**.  
-✅ **Setup Guide** – Step-by-step **backend & frontend setup**.  
-✅ **Admin Credentials** – **Interviewer directly test** kar sakta hai.  
-✅ **API Documentation** – **CRUD Routes** clear hai.  
-✅ **Code Examples** – Charts and Features properly **highlighted**.  
 
 ---
