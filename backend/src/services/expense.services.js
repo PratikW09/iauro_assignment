@@ -5,7 +5,7 @@ const createExpense = async (data) => {
   const { userId, amount, description, category } = data;
 
   const expense = await Expense.create({
-    user: userId,
+    userId: userId,
     amount,
     description,
     category,
@@ -19,7 +19,7 @@ const createExpense = async (data) => {
 };
 
 const updateExpense = async (expenseId, data) => {
-  const expense = await Expense.findByIdAndUpdate(expenseId, data, {
+  const expense = await Expense.findByIdAndUpdate({_id:expenseId}, data, {
     new: true,
     runValidators: true,
   });

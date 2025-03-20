@@ -4,13 +4,11 @@ import { decodeToken } from "../utils/token.utils.js";
 export const verifyJWT = async(req,res,next)=>{
     try {
         
-        const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ","")
-    
+        const token = req.cookies?.token?.accessToken || req.header("Authorization")?.replace("Bearer ","")
         if(!token){
             throw new Error(401,"Unauthorized request")
         }
         const decodedTokenID = await decodeToken(token);
-        // console.log(decodedToken)
         const user = await User.findById(decodedTokenID).select(
             "-password"
         )

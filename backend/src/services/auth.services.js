@@ -10,7 +10,7 @@ const registerUser = async (data) => {
     throw new Error('User already exists');
   }
 
-  const hashedPassword = await hashPassword(password, salt);
+  const hashedPassword = await hashPassword(password);
 
   const user = await User.create({
     name,
@@ -35,12 +35,13 @@ const loginUser = async (data) => {
   const { email, password } = data;
 
   const user = await User.findOne({ email });
+  const token = await generateToken(user)
   if (user && (await bcrypt.compare(password, user.password))) {
     return {
       _id: user.id,
       name: user.name,
       email: user.email,
-      token: generateToken(user.id),
+      token: token,
     };
   } else {
     throw new Error('Invalid email or password');

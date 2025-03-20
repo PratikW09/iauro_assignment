@@ -9,6 +9,7 @@ export const hashPassword = async (password) => {
 
 
 export const generateToken = (user) => {
+  
   const accessToken = jwt.sign(
     { userId: user._id, email: user.email },
     process.env.access_token_secret,

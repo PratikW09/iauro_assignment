@@ -53,6 +53,7 @@ const login = async (req, res) => {
         userId: userData.userId,
         name: userData.name,
         email: userData.email,
+        token : userData.token
       });
   } catch (error) {
     res.status(401).json({ message: error.message });
@@ -62,14 +63,13 @@ const login = async (req, res) => {
 const logout = async (req, res) => {
   try {
     const token = req.cookies.token || req.headers.authorization?.split(' ')[1];
-
     if (!token) {
       return errorResponse(res, 400, 'Token not found.');
     }
     
     res.clearCookie('token', options)
     
-    return Response(res,200, 'User logged out successfully');
+    return successResponse(res,200, 'User logged out successfully');
   } catch (error) {
     res.status(500).json({ message: 'Logout failed' });
   }
