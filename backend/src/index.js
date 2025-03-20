@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/db.config.js';
 import authRoutes from './routes/auth.routes.js';
+import expenseRoutes from './routes/expense.routes.js';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use(express.json());
 connectDB();
 
 app.use('/api/auth', authRoutes);
+app.use('/api/expense', expenseRoutes);
 
 
 // Start the server
